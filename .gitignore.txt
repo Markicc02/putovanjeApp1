@@ -1,0 +1,43 @@
+# Build Folders
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.cache
+*.db
+*.log
+
+# Rider IDE
+.idea/
+*.sln.iml
+
+# Visual Studio Code
+.vscode/
+
+# NuGet Packages
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+
+# ASP.NET / .NET Core
+appsettings.Development.json
+appsettings.Local.json
+*.publishsettings
+*.dotCover
+*.dotCover.cache
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# Rider
+.idea/
+
+# Others
+*.DS_Store
+*.bak
+*.swp
