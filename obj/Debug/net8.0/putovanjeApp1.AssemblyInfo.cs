@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("putovanjeApp1")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e921dbad0c789cd8aba8b236d4d0982b3aa331ff")]
 [assembly: System.Reflection.AssemblyProductAttribute("putovanjeApp1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("putovanjeApp1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

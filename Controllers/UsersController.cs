@@ -14,16 +14,16 @@ namespace putovanjeApp1.Controllers
     public class UserController : ControllerBase
     {
         private readonly IGraphClient _client;
-        private readonly UserService _userService; // 👈 dodato
+        private readonly UserService _userService; 
 
-        public UserController(IGraphClient client, UserService userService) // 👈 dodato
+        public UserController(IGraphClient client, UserService userService)
         {
             _client = client;
             _userService = userService;
         }
 
 
-        // 🟢 GET: api/user
+        
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -35,13 +35,13 @@ namespace putovanjeApp1.Controllers
             return Ok(users.ToList());
         }
 
-        // 🟡 GET: api/user/{id}
+        
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int id)
+        public async Task<IActionResult> GetById(Guid id)
         {
             var users = await _client.Cypher
                 .Match("(u:User)")
-                .Where((User u) => u.id == id)
+                .Where((User u) => u.guid == id)
                 .Return(u => u.As<User>())
                 .ResultsAsync;
 
@@ -49,7 +49,7 @@ namespace putovanjeApp1.Controllers
             return result != null ? Ok(result) : NotFound($"User sa ID {id} nije pronađen.");
         }
 
-        // 🔵 POST: api/user
+        
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] User noviUser)
         {
@@ -61,13 +61,13 @@ namespace putovanjeApp1.Controllers
             return Ok("User uspešno dodat.");
         }
 
-        // 🟠 PUT: api/user/{id}
+        
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody] User izmenjeniUser)
+        public async Task<IActionResult> Update(Guid id, [FromBody] User izmenjeniUser)
         {
             await _client.Cypher
                 .Match("(u:User)")
-                .Where((User u) => u.id == id)
+                .Where((User u) => u.guid == id)
                 .Set("u = $izmenjeniUser")
                 .WithParam("izmenjeniUser", izmenjeniUser)
                 .ExecuteWithoutResultsAsync();
@@ -75,13 +75,13 @@ namespace putovanjeApp1.Controllers
             return Ok("User uspešno izmenjen.");
         }
 
-        // 🔴 DELETE: api/user/{id}
+        
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Delete(Guid id)
         {
             await _client.Cypher
                 .Match("(u:User)")
-                .Where((User u) => u.id == id)
+                .Where((User u) => u.guid == id)
                 .DetachDelete("u")
                 .ExecuteWithoutResultsAsync();
 
@@ -90,11 +90,11 @@ namespace putovanjeApp1.Controllers
 
         // GET: api/user/{id}/recommendations/destinations
         [HttpGet("{id}/recommendations/destinations")]
-        public async Task<IActionResult> GetRecommendedDestinations(int id)
+        public async Task<IActionResult> GetRecommendedDestinations(Guid id)
         {
             var preporuke = await _client.Cypher
                 .Match("(u:User)-[:LIKES]->(a:Aktivnost)<-[:NUDI]-(at:Atrakcija)<-[:SADRZI]-(d:Destinacija)")
-                .Where((User u) => u.id == id)
+                .Where((User u) => u.guid == id)
                 .Return(d => d.As<Destinacija>())
                 .ResultsAsync;
 
@@ -104,11 +104,11 @@ namespace putovanjeApp1.Controllers
 
         // GET: api/user/{id}/recommendations/activities
         [HttpGet("{id}/recommendations/activities")]
-        public async Task<IActionResult> GetRecommendedActivities(int id)
+        public async Task<IActionResult> GetRecommendedActivities(Guid id)
         {
             var preporuke = await _client.Cypher
                 .Match("(u:User)-[:LIKES]->(a:Aktivnost)<-[:NUDI]-(at:Atrakcija)<-[:SADRZI]-(d:Destinacija)")
-                .Where((User u) => u.id == id)
+                .Where((User u) => u.guid == id)
                 .OptionalMatch("(u)-[:BEO_NA]->(p:Putovanje)-[:SADRZI]->(d2:Destinacija)-[:NUDI]->(at2:Atrakcija)")
                 .With("collect(at2) as posetio, at, d")
                 .Where("NOT at IN posetio")
@@ -120,7 +120,7 @@ namespace putovanjeApp1.Controllers
         }
 
         [HttpGet("{id}/similar")]
-        public async Task<IActionResult> GetSimilarUsers(int id)
+        public async Task<IActionResult> GetSimilarUsers(Guid id)
         {
             var similarUsers = await _client.Cypher
                 .Match("(u:User {Id: $userId})-[:LIKES|PUTOVAO_NA]->(x)")
@@ -141,7 +141,7 @@ namespace putovanjeApp1.Controllers
 
 
         [HttpGet("{id}/recommendations/destinations2")]
-        public async Task<IActionResult> GetRecommendedDestinations2(int id)
+        public async Task<IActionResult> GetRecommendedDestinations2(Guid id)
         {
             var preporuke = await _userService.GetRecommendedDestinationsAsync(id);
             return Ok(preporuke);

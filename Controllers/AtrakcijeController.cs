@@ -30,11 +30,11 @@ namespace putovanjeApp1.Controllers
 
         
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int id)
+        public async Task<IActionResult> GetById(Guid id)
         {
             var atrakcija = await _client.Cypher
                 .Match("(n:Atrakcija)")
-                .Where((Atrakcija n) => n.id == id)
+                .Where((Atrakcija n) => n.guid == id)
                 .Return(n => n.As<Atrakcija>())
                 .ResultsAsync;
 
@@ -56,11 +56,11 @@ namespace putovanjeApp1.Controllers
 
         
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody] Atrakcija izmenjenaAtrakcija)
+        public async Task<IActionResult> Update(Guid id, [FromBody] Atrakcija izmenjenaAtrakcija)
         {
             await _client.Cypher
                 .Match("(n:Atrakcija)")
-                .Where((Atrakcija n) => n.id == id)
+                .Where((Atrakcija n) => n.guid == id)
                 .Set("n = $izmenjenaAtrakcija")
                 .WithParam("izmenjenaAtrakcija", izmenjenaAtrakcija)
                 .ExecuteWithoutResultsAsync();
@@ -70,11 +70,11 @@ namespace putovanjeApp1.Controllers
 
         
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Delete(Guid id)
         {
             await _client.Cypher
                 .Match("(n:Atrakcija)")
-                .Where((Atrakcija n) => n.id == id)
+                .Where((Atrakcija n) => n.guid == id)
                 .DetachDelete("n")
                 .ExecuteWithoutResultsAsync();
 

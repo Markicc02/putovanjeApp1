@@ -39,3 +39,4 @@ C:\Projekti\putovanjeApp1\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Projekti\putovanjeApp1\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Projekti\putovanjeApp1\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Projekti\putovanjeApp1\obj\Debug\net8.0\putovanjeApp1.MvcApplicationPartsAssemblyInfo.cs
+C:\Projekti\putovanjeApp1\obj\Debug\net8.0\putovanjeApp1.sourcelink.json

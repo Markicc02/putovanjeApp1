@@ -18,7 +18,7 @@ namespace putovanjeApp1.Controllers
             _client = client;
         }
 
-        // 🟢 GET: api/komentar
+        
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -30,13 +30,13 @@ namespace putovanjeApp1.Controllers
             return Ok(komentari.ToList());
         }
 
-        // 🟡 GET: api/komentar/{id}
+        
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int id)
+        public async Task<IActionResult> GetById(Guid id)
         {
             var komentari = await _client.Cypher
                 .Match("(k:Komentar)")
-                .Where((Komentar k) => k.id == id)
+                .Where((Komentar k) => k.guid == id)
                 .Return(k => k.As<Komentar>())
                 .ResultsAsync;
 
@@ -44,7 +44,7 @@ namespace putovanjeApp1.Controllers
             return result != null ? Ok(result) : NotFound($"Komentar sa ID {id} nije pronađen.");
         }
 
-        // 🔵 POST: api/komentar
+        
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] Komentar noviKomentar)
         {
@@ -56,13 +56,13 @@ namespace putovanjeApp1.Controllers
             return Ok("Komentar uspešno dodat.");
         }
 
-        // 🟠 PUT: api/komentar/{id}
+        
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody] Komentar izmenjeniKomentar)
+        public async Task<IActionResult> Update(Guid id, [FromBody] Komentar izmenjeniKomentar)
         {
             await _client.Cypher
                 .Match("(k:Komentar)")
-                .Where((Komentar k) => k.id == id)
+                .Where((Komentar k) => k.guid == id)
                 .Set("k = $izmenjeniKomentar")
                 .WithParam("izmenjeniKomentar", izmenjeniKomentar)
                 .ExecuteWithoutResultsAsync();
@@ -70,13 +70,13 @@ namespace putovanjeApp1.Controllers
             return Ok("Komentar uspešno izmenjen.");
         }
 
-        // 🔴 DELETE: api/komentar/{id}
+        
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Delete(Guid id)
         {
             await _client.Cypher
                 .Match("(k:Komentar)")
-                .Where((Komentar k) => k.id == id)
+                .Where((Komentar k) => k.guid == id)
                 .DetachDelete("k")
                 .ExecuteWithoutResultsAsync();
 

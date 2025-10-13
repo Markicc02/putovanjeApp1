@@ -14,11 +14,11 @@ namespace putovanjeApp1.Services
         }
 
         // Preporuka destinacija po interesovanjima korisnika
-        public async Task<List<Destinacija>> GetRecommendedDestinations(int userId)
+        public async Task<List<Destinacija>> GetRecommendedDestinations(Guid userId)
         {
             var destinations = await _client.Cypher
                 .Match("(u:User)-[:LIKES]->(a:Aktivnost)<-[:NUDI]-(d:Destinacija)")
-                .Where((User u) => u.id == userId)
+                .Where((User u) => u.guid == userId)
                 .Return(d => d.As<Destinacija>())
                 .ResultsAsync;
 
@@ -26,11 +26,11 @@ namespace putovanjeApp1.Services
         }
 
         // Preporuka atrakcija ili aktivnosti korisniku
-        public async Task<List<Atrakcija>> GetRecommendedActivities(int userId)
+        public async Task<List<Atrakcija>> GetRecommendedActivities(Guid userId)
         {
             var activities = await _client.Cypher
                 .Match("(u:User)-[:VISITED]->(p:Putovanje)-[:SADRZI]->(d:Destinacija)-[:NUDI]->(at:Atrakcija)")
-                .Where((User u) => u.id == userId)
+                .Where((User u) => u.guid == userId)
                 .With("u, at, d")
                 .Match("(other:User)-[:VISITED]->(:Putovanje)-[:SADRZI]->(d)-[:NUDI]->(at)")
                 .Where("other.Id <> $userId")
@@ -41,13 +41,13 @@ namespace putovanjeApp1.Services
             return activities.Distinct().ToList();
         }
 
-        public async Task<List<Destinacija>> GetRecommendedDestinationsAsync(int userId, int limit = 10)
+        public async Task<List<Destinacija>> GetRecommendedDestinationsAsync(Guid userId, int limit = 10)
         {
             // 1️⃣ Pronađi slične korisnike po zajedničkim aktivnostima i putovanjima
             var similarUsers = await _client.Cypher
                 .Match("(u:User {Id: $userId})-[:LIKES|PUTOVAO_NA]->(x)<-[:LIKES|PUTOVAO_NA]-(other:User)")
                 .WithParam("userId", userId)
-                .ReturnDistinct(other => other.As<User>().id)
+                .ReturnDistinct(other => other.As<User>().guid)
                 .ResultsAsync;
 
             var similarUserIds = similarUsers.ToList();

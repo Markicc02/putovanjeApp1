@@ -43,10 +43,9 @@ public class AktivnostController : ControllerBase
     public async Task<IActionResult> Create([FromBody] Aktivnost novaAktivnost)
     {
         await _client.Cypher
-            .Create("(n:Aktivnost {guid: randomUUID(), naziv: $naziv, kategorija: $kategorija})")
-            .WithParam("naziv", novaAktivnost.naziv)
-            .WithParam("kategorija", novaAktivnost.kategorija)
-            .ExecuteWithoutResultsAsync();
+                .Create("(n:Aktivnost $novaAktivnost)")
+                .WithParam("novaAktivnost", novaAktivnost)
+                .ExecuteWithoutResultsAsync();
 
         return Ok("Aktivnost uspešno dodata.");
     }
