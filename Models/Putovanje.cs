@@ -2,7 +2,7 @@
 
 public class Putovanje
 {
-    public int? id { get; set; }
+    public Guid guid { get; set; } = Guid.NewGuid();
     public string? naziv { get; set; }
     public DateTime? datumPocetka { get; set; }
     public DateTime? datumZavrsetka { get; set; }
