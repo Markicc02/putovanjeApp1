@@ -2,12 +2,11 @@
 {
     public class UserDto
     {
-        public Guid? Guid { get; set; }
-        public string? Ime { get; set; }
-        public string? Email { get; set; }
-        public List<string> Interesovanja { get; set; } = new();
-
-        public List<Guid> Putovanja { get; set; } = new(); // korisnik ima više putovanja
+        public string? ime { get; set; }
+        public string? email { get; set; }
+        public List<string> interesovanja { get; set; } = new();
+        public List<Guid> putovanja { get; set; } = new(); // korisnik ima više putovanja
        
     }
 }
+ 

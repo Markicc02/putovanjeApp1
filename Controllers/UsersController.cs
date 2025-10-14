@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Neo4jClient;
 using Neo4jClient.Cypher;
+using putovanjeApp1.Dtos;
 using putovanjeApp1.Models;
 using putovanjeApp1.Services;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace putovanjeApp1.Controllers
@@ -14,14 +17,70 @@ namespace putovanjeApp1.Controllers
     public class UserController : ControllerBase
     {
         private readonly IGraphClient _client;
-        private readonly UserService _userService; // 👈 dodato
+        private readonly UserService _userService;
 
-        public UserController(IGraphClient client, UserService userService) // 👈 dodato
+        public UserController(IGraphClient client, UserService userService)
         {
             _client = client;
             _userService = userService;
         }
 
+        private Guid? GetCurrentUserGuid()
+        {
+            var claim = User.FindFirst(ClaimTypes.NameIdentifier);
+            if (claim == null) return null;
+            if (Guid.TryParse(claim.Value, out var g)) return g;
+            return null;
+        }
+
+        [HttpGet("{guid:guid}")]
+        [Authorize]
+        public async Task<IActionResult> GetPrivateInfo(Guid guid)
+        {
+            var current = GetCurrentUserGuid();
+            if (current == null) return Unauthorized();
+
+            // dozvoljeno ako je vlasnik ili ima ulogu Admin
+            if (current != guid && !User.IsInRole("Admin"))
+                return Forbid();
+
+            var user = await _userService.GetByGuidAsync(guid);
+            if (user == null) return NotFound();
+
+            // Sakrij passwordHash pre slanja
+            user.passwordHash = null;
+            return Ok(user);
+        }
+
+        [HttpPut("{guid}")]
+        [Authorize]
+        public async Task<IActionResult> Update(Guid guid, [FromBody] UserDto dto)
+        {
+            var current = GetCurrentUserGuid();
+            if (current == null) return Unauthorized();
+            if (current != guid && !User.IsInRole("Admin"))
+                return Forbid();
+
+            // Po potrebi validiraj dto (email format itd.)
+            var ok = await _userService.UpdateAsync(guid, dto);
+            if (!ok) return BadRequest();
+
+            return NoContent();
+        }
+
+        // DELETE: samo vlasnik ili admin
+        [HttpDelete("{guid}")]
+        [Authorize]
+        public async Task<IActionResult> Delete(Guid guid)
+        {
+            var current = GetCurrentUserGuid();
+            if (current == null) return Unauthorized();
+            if (current != guid && !User.IsInRole("Admin"))
+                return Forbid();
+
+            await _userService.DeleteAsync(guid);
+            return NoContent();
+        }
 
         // 🟢 GET: api/user
         [HttpGet]
@@ -35,58 +94,19 @@ namespace putovanjeApp1.Controllers
             return Ok(users.ToList());
         }
 
-        // 🟡 GET: api/user/{id}
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(Guid id)
+        [HttpGet("public/{guid:guid}")]
+        public async Task<IActionResult> GetById(Guid guid)
         {
             var users = await _client.Cypher
                 .Match("(u:User)")
-                .Where((User u) => u.guid == id)
+                .Where((User u) => u.guid == guid)
                 .Return(u => u.As<User>())
                 .ResultsAsync;
 
             var result = users.SingleOrDefault();
-            return result != null ? Ok(result) : NotFound($"User sa ID {id} nije pronađen.");
+            return result != null ? Ok(result) : NotFound($"User sa ID {guid} nije pronađen.");
         }
 
-        // 🔵 POST: api/user
-        [HttpPost]
-        public async Task<IActionResult> Create([FromBody] User noviUser)
-        {
-            await _client.Cypher
-                .Create("(u:User $noviUser)")
-                .WithParam("noviUser", noviUser)
-                .ExecuteWithoutResultsAsync();
-
-            return Ok("User uspešno dodat.");
-        }
-
-        // 🟠 PUT: api/user/{id}
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Update(Guid id, [FromBody] User izmenjeniUser)
-        {
-            await _client.Cypher
-                .Match("(u:User)")
-                .Where((User u) => u.guid == id)
-                .Set("u = $izmenjeniUser")
-                .WithParam("izmenjeniUser", izmenjeniUser)
-                .ExecuteWithoutResultsAsync();
-
-            return Ok("User uspešno izmenjen.");
-        }
-
-        // 🔴 DELETE: api/user/{id}
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(Guid id)
-        {
-            await _client.Cypher
-                .Match("(u:User)")
-                .Where((User u) => u.guid == id)
-                .DetachDelete("u")
-                .ExecuteWithoutResultsAsync();
-
-            return Ok("User uspešno obrisan.");
-        }
 
         // GET: api/user/{id}/recommendations/destinations
         [HttpGet("{id}/recommendations/destinations")]

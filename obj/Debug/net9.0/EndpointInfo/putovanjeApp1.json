@@ -692,55 +692,14 @@
         }
       }
     },
-    "/api/User": {
-      "get": {
-        "tags": [
-          "User"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "User"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/User"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/User"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/User"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/User/{id}": {
+    "/api/User/{guid}": {
       "get": {
         "tags": [
           "User"
         ],
         "parameters": [
           {
-            "name": "id",
+            "name": "guid",
             "in": "path",
             "required": true,
             "schema": {
@@ -761,7 +720,7 @@
         ],
         "parameters": [
           {
-            "name": "id",
+            "name": "guid",
             "in": "path",
             "required": true,
             "schema": {
@@ -774,17 +733,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/UserDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/UserDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/UserDto"
               }
             }
           }
@@ -801,7 +760,42 @@
         ],
         "parameters": [
           {
-            "name": "id",
+            "name": "guid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/User": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/User/public/{guid}": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "guid",
             "in": "path",
             "required": true,
             "schema": {
@@ -1101,6 +1095,35 @@
             "type": "array",
             "items": {
               "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserDto": {
+        "type": "object",
+        "properties": {
+          "ime": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "interesovanja": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "putovanja": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
             },
             "nullable": true
           }

@@ -47,6 +47,53 @@ namespace putovanjeApp1.Services
             return result.FirstOrDefault();
         }
 
+        public async Task<User?> GetByGuidAsync(Guid guid)
+        {
+            var results = await _client.Cypher
+                .Match("(u:User)")
+                .Where("u.Guid = $guid")
+                .WithParam("guid", guid.ToString())
+                .Return(u => u.As<User>())
+                .ResultsAsync;
+
+            return results.FirstOrDefault();
+        }
+
+        public async Task<bool> UpdateAsync(Guid guid, UserDto updateDto)
+        {
+            // Ne mapiramo passwordHash ovde; za promenu lozinke imaj poseban endpoint
+            var props = new
+            {
+                Ime = updateDto.ime,
+                Email = updateDto.email,
+                Interesovanja = updateDto.interesovanja
+            };
+
+                 await _client.Cypher
+                .Match("(u:User)")
+                .Where("u.Guid = $guid")
+                .WithParam("guid", guid.ToString())
+                .Set("u.Ime = $Ime, u.Email = $Email, u.Interesovanja = $Interesovanja")
+                .WithParams(props)
+                .ExecuteWithoutResultsAsync();
+
+            return true;
+        }
+
+        public async Task<bool> DeleteAsync(Guid guid)
+        {
+            await _client.Cypher
+                .Match("(u:User)")
+                .Where("u.Guid = $guid")
+                .WithParam("guid", guid.ToString())
+                .DetachDelete("u")
+                .ExecuteWithoutResultsAsync();
+
+            return true;
+        }
+
+
+
 
         // Preporuka destinacija po interesovanjima korisnika
         public async Task<List<Destinacija>> GetRecommendedDestinations(Guid userId)
