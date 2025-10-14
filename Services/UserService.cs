@@ -1,5 +1,6 @@
 ﻿using Neo4jClient;
 using Neo4jClient.Cypher;
+using putovanjeApp1.Dtos;
 using putovanjeApp1.Models;
 
 namespace putovanjeApp1.Services
@@ -12,6 +13,87 @@ namespace putovanjeApp1.Services
         {
             _client = client;
         }
+
+        // Registracija korisnika
+        public async Task<User> RegisterAsync(User user)
+        {
+            user.guid = Guid.NewGuid();
+
+            await _client.Cypher
+                .Create("(u:User $user)")
+                .WithParam("user", new
+                 {
+                     Guid = user.guid.ToString(),
+                    Ime = user.ime,
+                    Email = user.email,
+                    PasswordHash = user.passwordHash,
+                    Interesovanja = user.interesovanja
+     })
+     .ExecuteWithoutResultsAsync();
+
+
+            return user;
+        }
+
+        // Login - vraća Guid korisnika ako postoji
+        public async Task<Guid?> LoginAsync(string email, string password)
+        {
+            var result = await _client.Cypher
+                .Match("(u:User)")
+                .Where((User u) => u.email == email && u.passwordHash == password)
+                .Return(u => u.As<User>().guid)
+                .ResultsAsync;
+
+            return result.FirstOrDefault();
+        }
+
+        public async Task<User?> GetByGuidAsync(Guid guid)
+        {
+            var results = await _client.Cypher
+                .Match("(u:User)")
+                .Where("u.Guid = $guid")
+                .WithParam("guid", guid.ToString())
+                .Return(u => u.As<User>())
+                .ResultsAsync;
+
+            return results.FirstOrDefault();
+        }
+
+        public async Task<bool> UpdateAsync(Guid guid, UserDto updateDto)
+        {
+            // Ne mapiramo passwordHash ovde; za promenu lozinke imaj poseban endpoint
+            var props = new
+            {
+                Ime = updateDto.ime,
+                Email = updateDto.email,
+                Interesovanja = updateDto.interesovanja
+            };
+
+                 await _client.Cypher
+                .Match("(u:User)")
+                .Where("u.Guid = $guid")
+                .WithParam("guid", guid.ToString())
+                .Set("u.Ime = $Ime, u.Email = $Email, u.Interesovanja = $Interesovanja")
+                .WithParams(props)
+                .ExecuteWithoutResultsAsync();
+
+            return true;
+        }
+
+        public async Task<bool> DeleteAsync(Guid guid)
+        {
+            await _client.Cypher
+                .Match("(u:User)")
+                .Where("u.Guid = $guid")
+                .WithParam("guid", guid.ToString())
+                .DetachDelete("u")
+                .ExecuteWithoutResultsAsync();
+
+            return true;
+        }
+
+
+
 
         // Preporuka destinacija po interesovanjima korisnika
         public async Task<List<Destinacija>> GetRecommendedDestinations(Guid userId)

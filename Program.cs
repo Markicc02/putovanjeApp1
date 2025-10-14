@@ -1,20 +1,42 @@
 ﻿using Microsoft.OpenApi.Models;
-using putovanjeApp1.Services;
 using Neo4jClient;
+using putovanjeApp1.Services;
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
+var jwtSecret = builder.Configuration["Jwt:Secret"] ?? "u7Z!k9pR#1xQvE4sWbG2dT6yHjN8cF0L";
+var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSecret));
 
+builder.Services.AddSingleton(key);
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(o =>
+    {
+        o.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+        {
+            ValidateIssuer = false,
+            ValidateAudience = false,
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = key,
+            ClockSkew = TimeSpan.Zero
+        };
+    });
+
+builder.Services.AddAuthorization();
 
 var client = new BoltGraphClient(
     new Uri("bolt://localhost:7687"),
     "neo4j",
     "password"
+   
 );
-client.DefaultDatabase = "putovanjeapp";
 
+client.DefaultDatabase = "putovanjeapp";
 await client.ConnectAsync();
-//client.DefaultDatabase = "putovanjeapp";
+
 builder.Services.AddSingleton<IGraphClient>(client);
 
 
@@ -34,6 +56,27 @@ builder.Services.AddSwaggerGen(c =>
         Title = "SmartTrip API",
         Version = "v1"
     });
+
+
+// Dodaj JWT support u Swagger UI
+c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+{
+    In = ParameterLocation.Header,
+    Description = "Unesite 'Bearer {token}'",
+    Name = "Authorization",
+    Type = SecuritySchemeType.ApiKey
+});
+
+c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "Bearer" }
+            },
+            new string[] {}
+        }
+    });
 });
 
 var app = builder.Build();
@@ -47,5 +90,9 @@ app.UseSwaggerUI(c =>
 });
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
+app.UseAuthorization();
+
 app.MapControllers();
 app.Run();

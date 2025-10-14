@@ -3,56 +3,28 @@
   "WorkspaceRootPath": "C:\\Projekti\\putovanjeApp1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|c:\\projekti\\putovanjeapp1\\controllers\\aktivnostcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|solutionrelative:controllers\\aktivnostcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|c:\\projekti\\putovanjeapp1\\controllers\\atrakcijecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|solutionrelative:controllers\\atrakcijecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|c:\\projekti\\putovanjeapp1\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|C:\\Projekti\\putovanjeApp1\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|c:\\projekti\\putovanjeapp1\\models\\putovanje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|solutionrelative:models\\putovanje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|c:\\projekti\\putovanjeapp1\\models\\komentar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|solutionrelative:models\\komentar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|c:\\projekti\\putovanjeapp1\\models\\destinacija.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|solutionrelative:models\\destinacija.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|c:\\projekti\\putovanjeapp1\\models\\atrakcija.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|solutionrelative:models\\atrakcija.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|c:\\projekti\\putovanjeapp1\\models\\aktivnost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|solutionrelative:models\\aktivnost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|c:\\projekti\\putovanjeapp1\\controllers\\destinacijecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|solutionrelative:controllers\\destinacijecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|c:\\projekti\\putovanjeapp1\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|solutionrelative:services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|c:\\projekti\\putovanjeapp1\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|C:\\Projekti\\putovanjeApp1\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|c:\\projekti\\putovanjeapp1\\controllers\\putovanjacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|solutionrelative:controllers\\putovanjacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|C:\\Projekti\\putovanjeApp1\\models\\putovanje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|solutionrelative:models\\putovanje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|c:\\projekti\\putovanjeapp1\\controllers\\komentarcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|solutionrelative:controllers\\komentarcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|C:\\Projekti\\putovanjeApp1\\models\\komentar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|solutionrelative:models\\komentar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|C:\\Projekti\\putovanjeApp1\\models\\destinacija.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|solutionrelative:models\\destinacija.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|C:\\Projekti\\putovanjeApp1\\models\\atrakcija.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|solutionrelative:models\\atrakcija.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -70,171 +42,80 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AktivnostController.cs",
-              "DocumentMoniker": "C:\\Projekti\\putovanjeApp1\\Controllers\\AktivnostController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AktivnostController.cs",
-              "ToolTip": "C:\\Projekti\\putovanjeApp1\\Controllers\\AktivnostController.cs",
-              "RelativeToolTip": "Controllers\\AktivnostController.cs",
-              "ViewState": "AQIAAFEAAAAAAAAAAAAmwC8AAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T10:36:08.262Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Aktivnost.cs",
-              "DocumentMoniker": "C:\\Projekti\\putovanjeApp1\\Models\\Aktivnost.cs",
-              "RelativeDocumentMoniker": "Models\\Aktivnost.cs",
-              "ToolTip": "C:\\Projekti\\putovanjeApp1\\Models\\Aktivnost.cs",
-              "RelativeToolTip": "Models\\Aktivnost.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAA1AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T10:35:35.137Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Projekti\\putovanjeApp1\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "Services\\UserService.cs",
-              "ToolTip": "C:\\Projekti\\putovanjeApp1\\Services\\UserService.cs",
-              "RelativeToolTip": "Services\\UserService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADEAAAA+AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T10:28:30.668Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 1,
               "Title": "UsersController.cs",
               "DocumentMoniker": "C:\\Projekti\\putovanjeApp1\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
               "ToolTip": "C:\\Projekti\\putovanjeApp1\\Controllers\\UsersController.cs",
               "RelativeToolTip": "Controllers\\UsersController.cs",
-              "ViewState": "AQIAAHoAAAAAAAAAAAAAwI8AAABJAAAA",
+              "ViewState": "AQIAAF0AAAAAAAAAAAAmwHAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-13T10:25:48.575Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "PutovanjaController.cs",
-              "DocumentMoniker": "C:\\Projekti\\putovanjeApp1\\Controllers\\PutovanjaController.cs",
-              "RelativeDocumentMoniker": "Controllers\\PutovanjaController.cs",
-              "ToolTip": "C:\\Projekti\\putovanjeApp1\\Controllers\\PutovanjaController.cs",
-              "RelativeToolTip": "Controllers\\PutovanjaController.cs",
-              "ViewState": "AQIAADsAAAAAAAAAAAAIwEwAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T10:24:42.199Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DestinacijeController.cs",
-              "DocumentMoniker": "C:\\Projekti\\putovanjeApp1\\Controllers\\DestinacijeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\DestinacijeController.cs",
-              "ToolTip": "C:\\Projekti\\putovanjeApp1\\Controllers\\DestinacijeController.cs",
-              "RelativeToolTip": "Controllers\\DestinacijeController.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAAwwEYAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T10:22:59.066Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AtrakcijeController.cs",
-              "DocumentMoniker": "C:\\Projekti\\putovanjeApp1\\Controllers\\AtrakcijeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AtrakcijeController.cs",
-              "ToolTip": "C:\\Projekti\\putovanjeApp1\\Controllers\\AtrakcijeController.cs",
-              "RelativeToolTip": "Controllers\\AtrakcijeController.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAowEwAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T10:22:07.759Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "Atrakcija.cs",
               "DocumentMoniker": "C:\\Projekti\\putovanjeApp1\\Models\\Atrakcija.cs",
               "RelativeDocumentMoniker": "Models\\Atrakcija.cs",
               "ToolTip": "C:\\Projekti\\putovanjeApp1\\Models\\Atrakcija.cs",
               "RelativeToolTip": "Models\\Atrakcija.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAA1wAQAAAA1AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-13T10:20:53.09Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Destinacija.cs",
               "DocumentMoniker": "C:\\Projekti\\putovanjeApp1\\Models\\Destinacija.cs",
               "RelativeDocumentMoniker": "Models\\Destinacija.cs",
               "ToolTip": "C:\\Projekti\\putovanjeApp1\\Models\\Destinacija.cs",
               "RelativeToolTip": "Models\\Destinacija.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAA1wAQAAAA1AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-13T10:20:58.825Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Komentar.cs",
               "DocumentMoniker": "C:\\Projekti\\putovanjeApp1\\Models\\Komentar.cs",
               "RelativeDocumentMoniker": "Models\\Komentar.cs",
               "ToolTip": "C:\\Projekti\\putovanjeApp1\\Models\\Komentar.cs",
               "RelativeToolTip": "Models\\Komentar.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAA1AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-13T10:21:06.042Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Putovanje.cs",
               "DocumentMoniker": "C:\\Projekti\\putovanjeApp1\\Models\\Putovanje.cs",
               "RelativeDocumentMoniker": "Models\\Putovanje.cs",
               "ToolTip": "C:\\Projekti\\putovanjeApp1\\Models\\Putovanje.cs",
               "RelativeToolTip": "Models\\Putovanje.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAA1AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-13T10:21:11.636Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Projekti\\putovanjeApp1\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",
               "ToolTip": "C:\\Projekti\\putovanjeApp1\\Models\\User.cs",
               "RelativeToolTip": "Models\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAA1AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-13T10:21:17.847Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "KomentarController.cs",
-              "DocumentMoniker": "C:\\Projekti\\putovanjeApp1\\Controllers\\KomentarController.cs",
-              "RelativeDocumentMoniker": "Controllers\\KomentarController.cs",
-              "ToolTip": "C:\\Projekti\\putovanjeApp1\\Controllers\\KomentarController.cs",
-              "RelativeToolTip": "Controllers\\KomentarController.cs",
-              "ViewState": "AQIAADsAAAAAAAAAAAAIwDoAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T10:23:40.074Z",
               "EditorCaption": ""
             }
           ]
