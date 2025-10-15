@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Projekti\\putovanjeApp1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|C:\\Projekti\\putovanjeApp1\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|c:\\projekti\\putovanjeapp1\\controllers\\relationshipcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|solutionrelative:controllers\\relationshipcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|C:\\Projekti\\putovanjeApp1\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|c:\\projekti\\putovanjeapp1\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|C:\\Projekti\\putovanjeApp1\\models\\putovanje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,6 +25,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|C:\\Projekti\\putovanjeApp1\\models\\atrakcija.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|solutionrelative:models\\atrakcija.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|c:\\projekti\\putovanjeapp1\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|solutionrelative:services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|C:\\Projekti\\putovanjeApp1\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF9A43A0-F75E-43AB-A0B2-EFFC29932507}|putovanjeApp1.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,21 +42,47 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RelationshipController.cs",
+              "DocumentMoniker": "C:\\Projekti\\putovanjeApp1\\Controllers\\RelationshipController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RelationshipController.cs",
+              "ToolTip": "C:\\Projekti\\putovanjeApp1\\Controllers\\RelationshipController.cs",
+              "RelativeToolTip": "Controllers\\RelationshipController.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAiwLwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-15T00:48:43.436Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Projekti\\putovanjeApp1\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "Services\\UserService.cs",
+              "ToolTip": "C:\\Projekti\\putovanjeApp1\\Services\\UserService.cs",
+              "RelativeToolTip": "Services\\UserService.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAowG0AAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-15T00:16:54.064Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "UsersController.cs",
               "DocumentMoniker": "C:\\Projekti\\putovanjeApp1\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
               "ToolTip": "C:\\Projekti\\putovanjeApp1\\Controllers\\UsersController.cs",
               "RelativeToolTip": "Controllers\\UsersController.cs",
-              "ViewState": "AQIAAF0AAAAAAAAAAAAmwHAAAAAAAAAA",
+              "ViewState": "AQIAAIsAAAAAAAAAAAAYwDAAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-13T10:25:48.575Z",
               "EditorCaption": ""
@@ -61,7 +95,7 @@
               "RelativeDocumentMoniker": "Models\\Atrakcija.cs",
               "ToolTip": "C:\\Projekti\\putovanjeApp1\\Models\\Atrakcija.cs",
               "RelativeToolTip": "Models\\Atrakcija.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-13T10:20:53.09Z",
               "EditorCaption": ""
@@ -74,7 +108,7 @@
               "RelativeDocumentMoniker": "Models\\Destinacija.cs",
               "ToolTip": "C:\\Projekti\\putovanjeApp1\\Models\\Destinacija.cs",
               "RelativeToolTip": "Models\\Destinacija.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-13T10:20:58.825Z",
               "EditorCaption": ""
@@ -87,7 +121,7 @@
               "RelativeDocumentMoniker": "Models\\Komentar.cs",
               "ToolTip": "C:\\Projekti\\putovanjeApp1\\Models\\Komentar.cs",
               "RelativeToolTip": "Models\\Komentar.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-13T10:21:06.042Z",
               "EditorCaption": ""
@@ -100,20 +134,20 @@
               "RelativeDocumentMoniker": "Models\\Putovanje.cs",
               "ToolTip": "C:\\Projekti\\putovanjeApp1\\Models\\Putovanje.cs",
               "RelativeToolTip": "Models\\Putovanje.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-13T10:21:11.636Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Projekti\\putovanjeApp1\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",
               "ToolTip": "C:\\Projekti\\putovanjeApp1\\Models\\User.cs",
               "RelativeToolTip": "Models\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-13T10:21:17.847Z",
               "EditorCaption": ""

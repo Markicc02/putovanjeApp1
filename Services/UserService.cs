@@ -23,7 +23,7 @@ namespace putovanjeApp1.Services
                 .Create("(u:User $user)")
                 .WithParam("user", new
                  {
-                     Guid = user.guid.ToString(),
+                     Guid = user.guid.ToString(),//sto to.string? i jel treba mala slova
                     Ime = user.ime,
                     Email = user.email,
                     PasswordHash = user.passwordHash,
@@ -95,7 +95,7 @@ namespace putovanjeApp1.Services
 
 
 
-        // Preporuka destinacija po interesovanjima korisnika
+        // preporuka destinacija po interesovanjima korisnika
         public async Task<List<Destinacija>> GetRecommendedDestinations(Guid userId)
         {
             var destinations = await _client.Cypher
@@ -107,7 +107,7 @@ namespace putovanjeApp1.Services
             return destinations.ToList();
         }
 
-        // Preporuka atrakcija ili aktivnosti korisniku
+        // preporuka atrakcija ili aktivnosti korisniku
         public async Task<List<Atrakcija>> GetRecommendedActivities(Guid userId)
         {
             var activities = await _client.Cypher
