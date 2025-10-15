@@ -28,7 +28,7 @@ namespace putovanjeApp1.Controllers
             return Ok(destinacije.ToList());
         }
 
-        // 🟡 GET: api/destinacija/{id}
+        
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(Guid id)
         {
@@ -42,7 +42,7 @@ namespace putovanjeApp1.Controllers
             return result != null ? Ok(result) : NotFound($"Destinacija sa ID {id} nije pronađena.");
         }
 
-        // 🔵 POST: api/destinacija
+        
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] Destinacija novaDestinacija)
         {
@@ -54,7 +54,7 @@ namespace putovanjeApp1.Controllers
             return Ok("Destinacija uspešno dodata.");
         }
 
-        // 🟠 PUT: api/destinacija/{id}
+        
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(Guid id, [FromBody] Destinacija izmenjenaDestinacija)
         {
@@ -68,7 +68,7 @@ namespace putovanjeApp1.Controllers
             return Ok("Destinacija uspešno izmenjena.");
         }
 
-        // 🔴 DELETE: api/destinacija/{id}
+        
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {

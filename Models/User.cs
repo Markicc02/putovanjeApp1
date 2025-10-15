@@ -2,7 +2,7 @@
 
 public class User
 {
-    public Guid guid { get; set; }
+    public Guid? guid { get; set; } = Guid.NewGuid();
     public string? ime { get; set; }
     public string? email { get; set; }
     public string? passwordHash { get; set; }

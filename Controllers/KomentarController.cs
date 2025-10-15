@@ -18,7 +18,7 @@ namespace putovanjeApp1.Controllers
             _client = client;
         }
 
-        // 🟢 GET: api/komentar
+        
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -30,7 +30,7 @@ namespace putovanjeApp1.Controllers
             return Ok(komentari.ToList());
         }
 
-        // 🟡 GET: api/komentar/{id}
+        
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(Guid id)
         {
@@ -44,7 +44,7 @@ namespace putovanjeApp1.Controllers
             return result != null ? Ok(result) : NotFound($"Komentar sa ID {id} nije pronađen.");
         }
 
-        // 🔵 POST: api/komentar
+        
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] Komentar noviKomentar)
         {
@@ -56,7 +56,7 @@ namespace putovanjeApp1.Controllers
             return Ok("Komentar uspešno dodat.");
         }
 
-        // 🟠 PUT: api/komentar/{id}
+        
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(Guid id, [FromBody] Komentar izmenjeniKomentar)
         {
@@ -70,7 +70,7 @@ namespace putovanjeApp1.Controllers
             return Ok("Komentar uspešno izmenjen.");
         }
 
-        // 🔴 DELETE: api/komentar/{id}
+        
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {

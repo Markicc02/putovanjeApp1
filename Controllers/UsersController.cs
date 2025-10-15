@@ -82,7 +82,7 @@ namespace putovanjeApp1.Controllers
             return NoContent();
         }
 
-        // 🟢 GET: api/user
+        
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -140,7 +140,7 @@ namespace putovanjeApp1.Controllers
         }
 
         [HttpGet("{id}/similar")]
-        public async Task<IActionResult> GetSimilarUsers(int id)
+        public async Task<IActionResult> GetSimilarUsers(Guid id)
         {
             var similarUsers = await _client.Cypher
                 .Match("(u:User {Id: $userId})-[:LIKES|PUTOVAO_NA]->(x)")
