@@ -151,65 +151,90 @@ namespace putovanjeApp1.Controllers
         }
 
 
-        // GET: api/user/{id}/recommendations/destinations
+        //// GET: api/user/{id}/recommendations/destinations
+        //[HttpGet("{id}/recommendations/destinations")]
+        //public async Task<IActionResult> GetRecommendedDestinations(Guid id)
+        //{
+        //    var preporuke = await _client.Cypher
+        //        .Match("(u:User)-[:LIKES]->(a:Aktivnost)<-[:NUDI]-(at:Atrakcija)<-[:SADRZI]-(d:Destinacija)")
+        //        .Where((User u) => u.guid == id)
+        //        .Return(d => d.As<Destinacija>())
+        //        .ResultsAsync;
+
+        //    var result = preporuke.Distinct().ToList();
+        //    return result.Any() ? Ok(result) : NotFound($"Nema preporučenih destinacija za korisnika sa ID {id}.");
+        //}
+
+        //// GET: api/user/{id}/recommendations/activities
+        //[HttpGet("{id}/recommendations/activities")]
+        //public async Task<IActionResult> GetRecommendedActivities(Guid id)
+        //{
+        //    var preporuke = await _client.Cypher
+        //        .Match("(u:User)-[:LIKES]->(a:Aktivnost)<-[:NUDI]-(at:Atrakcija)<-[:SADRZI]-(d:Destinacija)")
+        //        .Where((User u) => u.guid == id)
+        //        .OptionalMatch("(u)-[:BEO_NA]->(p:Putovanje)-[:SADRZI]->(d2:Destinacija)-[:NUDI]->(at2:Atrakcija)")
+        //        .With("collect(at2) as posetio, at, d")
+        //        .Where("NOT at IN posetio")
+        //        .Return(at => at.As<Aktivnost>())
+        //        .ResultsAsync;
+
+        //    var result = preporuke.Distinct().ToList();
+        //    return result.Any() ? Ok(result) : NotFound($"Nema preporučenih aktivnosti za korisnika sa ID {id}.");
+        //}
+
+        //[HttpGet("{id}/similar")]
+        //public async Task<IActionResult> GetSimilarUsers(Guid id)
+        //{
+        //    var similarUsers = await _client.Cypher
+        //        .Match("(u:User {Id: $userId})-[:LIKES|PUTOVAO_NA]->(x)")
+        //        .Match("(other:User)-[:LIKES|PUTOVAO_NA]->(x)")
+        //        .Where("other.Id <> $userId")
+        //        .WithParam("userId", id)
+        //        .Return((other, x) => new {
+        //            User = other.As<User>(),
+        //            CommonCount = Return.As<int>("COUNT(x)")
+        //        })
+        //        .OrderByDescending("CommonCount")
+        //        .Limit(10)
+        //        .ResultsAsync;
+
+        //    return Ok(similarUsers);
+        //}
+
+
+
+        //[HttpGet("{id}/recommendations/destinations2")]
+        //public async Task<IActionResult> GetRecommendedDestinations2(Guid id)
+        //{
+        //    var preporuke = await _userService.GetRecommendedDestinationsAsync(id);
+        //    return Ok(preporuke);
+        //}
         [HttpGet("{id}/recommendations/destinations")]
         public async Task<IActionResult> GetRecommendedDestinations(Guid id)
         {
-            var preporuke = await _client.Cypher
-                .Match("(u:User)-[:LIKES]->(a:Aktivnost)<-[:NUDI]-(at:Atrakcija)<-[:SADRZI]-(d:Destinacija)")
-                .Where((User u) => u.guid == id)
-                .Return(d => d.As<Destinacija>())
-                .ResultsAsync;
-
-            var result = preporuke.Distinct().ToList();
-            return result.Any() ? Ok(result) : NotFound($"Nema preporučenih destinacija za korisnika sa ID {id}.");
+            var preporuke = await _userService.GetRecommendedDestinations(id);
+            return preporuke.Any()
+                ? Ok(preporuke)
+                : NotFound($"Nema preporučenih destinacija za korisnika sa ID {id}.");
         }
 
-        // GET: api/user/{id}/recommendations/activities
         [HttpGet("{id}/recommendations/activities")]
         public async Task<IActionResult> GetRecommendedActivities(Guid id)
         {
-            var preporuke = await _client.Cypher
-                .Match("(u:User)-[:LIKES]->(a:Aktivnost)<-[:NUDI]-(at:Atrakcija)<-[:SADRZI]-(d:Destinacija)")
-                .Where((User u) => u.guid == id)
-                .OptionalMatch("(u)-[:BEO_NA]->(p:Putovanje)-[:SADRZI]->(d2:Destinacija)-[:NUDI]->(at2:Atrakcija)")
-                .With("collect(at2) as posetio, at, d")
-                .Where("NOT at IN posetio")
-                .Return(at => at.As<Aktivnost>())
-                .ResultsAsync;
-
-            var result = preporuke.Distinct().ToList();
-            return result.Any() ? Ok(result) : NotFound($"Nema preporučenih aktivnosti za korisnika sa ID {id}.");
+            var preporuke = await _userService.GetRecommendedActivities(id);
+            return preporuke.Any()
+                ? Ok(preporuke)
+                : NotFound($"Nema preporučenih aktivnosti za korisnika sa ID {id}.");
         }
-
-        [HttpGet("{id}/similar")]
-        public async Task<IActionResult> GetSimilarUsers(Guid id)
-        {
-            var similarUsers = await _client.Cypher
-                .Match("(u:User {Id: $userId})-[:LIKES|PUTOVAO_NA]->(x)")
-                .Match("(other:User)-[:LIKES|PUTOVAO_NA]->(x)")
-                .Where("other.Id <> $userId")
-                .WithParam("userId", id)
-                .Return((other, x) => new {
-                    User = other.As<User>(),
-                    CommonCount = Return.As<int>("COUNT(x)")
-                })
-                .OrderByDescending("CommonCount")
-                .Limit(10)
-                .ResultsAsync;
-
-            return Ok(similarUsers);
-        }
-
-
 
         [HttpGet("{id}/recommendations/destinations2")]
         public async Task<IActionResult> GetRecommendedDestinations2(Guid id)
         {
             var preporuke = await _userService.GetRecommendedDestinationsAsync(id);
-            return Ok(preporuke);
+            return preporuke.Any()
+                ? Ok(preporuke)
+                : NotFound($"Nema preporuka za korisnika sa ID {id}.");
         }
-
 
 
 

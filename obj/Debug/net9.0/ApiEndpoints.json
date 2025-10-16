@@ -1,0 +1,572 @@
+[
+  {
+    "ContainingType": "putovanjeApp1.Controllers.AktivnostController",
+    "Method": "GetAll",
+    "RelativePath": "api/Aktivnost",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "putovanjeApp1.Controllers.AktivnostController",
+    "Method": "Create",
+    "RelativePath": "api/Aktivnost",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "novaAktivnost",
+        "Type": "putovanjeApp1.Models.Aktivnost",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "putovanjeApp1.Controllers.AktivnostController",
+    "Method": "GetById",
+    "RelativePath": "api/Aktivnost/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "putovanjeApp1.Controllers.AktivnostController",
+    "Method": "Update",
+    "RelativePath": "api/Aktivnost/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "izmenjenaAktivnost",
+        "Type": "putovanjeApp1.Models.Aktivnost",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "putovanjeApp1.Controllers.AktivnostController",
+    "Method": "Delete",
+    "RelativePath": "api/Aktivnost/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "putovanjeApp1.Controllers.AtrakcijaController",
+    "Method": "GetAll",
+    "RelativePath": "api/Atrakcija",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "putovanjeApp1.Controllers.AtrakcijaController",
+    "Method": "Create",
+    "RelativePath": "api/Atrakcija",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "novaAtrakcija",
+        "Type": "putovanjeApp1.Models.Atrakcija",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "putovanjeApp1.Controllers.AtrakcijaController",
+    "Method": "GetById",
+    "RelativePath": "api/Atrakcija/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "putovanjeApp1.Controllers.AtrakcijaController",
+    "Method": "Update",
+    "RelativePath": "api/Atrakcija/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "izmenjenaAtrakcija",
+        "Type": "putovanjeApp1.Models.Atrakcija",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "putovanjeApp1.Controllers.AtrakcijaController",
+    "Method": "Delete",
+    "RelativePath": "api/Atrakcija/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthController",
+    "Method": "Login",
+    "RelativePath": "api/Auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthController",
+    "Method": "Register",
+    "RelativePath": "api/Auth/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "putovanjeApp1.Models.User",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "putovanjeApp1.Controllers.DestinacijaController",
+    "Method": "GetAll",
+    "RelativePath": "api/Destinacija",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "putovanjeApp1.Controllers.DestinacijaController",
+    "Method": "Create",
+    "RelativePath": "api/Destinacija",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "novaDestinacija",
+        "Type": "putovanjeApp1.Models.Destinacija",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "putovanjeApp1.Controllers.DestinacijaController",
+    "Method": "GetById",
+    "RelativePath": "api/Destinacija/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "putovanjeApp1.Controllers.DestinacijaController",
+    "Method": "Update",
+    "RelativePath": "api/Destinacija/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "izmenjenaDestinacija",
+        "Type": "putovanjeApp1.Models.Destinacija",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "putovanjeApp1.Controllers.DestinacijaController",
+    "Method": "Delete",
+    "RelativePath": "api/Destinacija/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "putovanjeApp1.Controllers.KomentarController",
+    "Method": "GetAll",
+    "RelativePath": "api/Komentar",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "putovanjeApp1.Controllers.KomentarController",
+    "Method": "Create",
+    "RelativePath": "api/Komentar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "noviKomentar",
+        "Type": "putovanjeApp1.Models.Komentar",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "putovanjeApp1.Controllers.KomentarController",
+    "Method": "GetById",
+    "RelativePath": "api/Komentar/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "putovanjeApp1.Controllers.KomentarController",
+    "Method": "Update",
+    "RelativePath": "api/Komentar/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "izmenjeniKomentar",
+        "Type": "putovanjeApp1.Models.Komentar",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "putovanjeApp1.Controllers.KomentarController",
+    "Method": "Delete",
+    "RelativePath": "api/Komentar/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "putovanjeApp1.Controllers.PutovanjeController",
+    "Method": "GetAll",
+    "RelativePath": "api/Putovanje",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "putovanjeApp1.Controllers.PutovanjeController",
+    "Method": "Create",
+    "RelativePath": "api/Putovanje",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "novoPutovanje",
+        "Type": "putovanjeApp1.Models.Putovanje",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "putovanjeApp1.Controllers.PutovanjeController",
+    "Method": "GetById",
+    "RelativePath": "api/Putovanje/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "putovanjeApp1.Controllers.PutovanjeController",
+    "Method": "Update",
+    "RelativePath": "api/Putovanje/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "izmenjenoPutovanje",
+        "Type": "putovanjeApp1.Models.Putovanje",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "putovanjeApp1.Controllers.PutovanjeController",
+    "Method": "Delete",
+    "RelativePath": "api/Putovanje/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "putovanjeApp1.Controllers.UserController",
+    "Method": "GetAll",
+    "RelativePath": "api/User",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "putovanjeApp1.Controllers.UserController",
+    "Method": "GetPrivateInfo",
+    "RelativePath": "api/User/{guid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "guid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "putovanjeApp1.Controllers.UserController",
+    "Method": "Update",
+    "RelativePath": "api/User/{guid}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "guid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "putovanjeApp1.Dtos.UserDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "putovanjeApp1.Controllers.UserController",
+    "Method": "Delete",
+    "RelativePath": "api/User/{guid}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "guid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "putovanjeApp1.Controllers.UserController",
+    "Method": "GetRecommendedActivities",
+    "RelativePath": "api/User/{id}/recommendations/activities",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "putovanjeApp1.Controllers.UserController",
+    "Method": "GetRecommendedDestinations",
+    "RelativePath": "api/User/{id}/recommendations/destinations",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "putovanjeApp1.Controllers.UserController",
+    "Method": "GetRecommendedDestinations2",
+    "RelativePath": "api/User/{id}/recommendations/destinations2",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "putovanjeApp1.Controllers.UserController",
+    "Method": "GetSimilarUsers",
+    "RelativePath": "api/User/{id}/similar",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "putovanjeApp1.Controllers.UserController",
+    "Method": "GetById",
+    "RelativePath": "api/User/public/{guid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "guid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

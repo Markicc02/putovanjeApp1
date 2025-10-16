@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\putovanjeApp1.props" />
+</Project>

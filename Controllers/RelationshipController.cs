@@ -184,5 +184,34 @@ namespace putovanjeApp1.Controllers
 
             return Ok("Veza ZA kreirana.");
         }
+
+
+        // User VOLI Aktivnost
+        [HttpPost("user/{userGuid}/voli/{aktivnostGuid}")]
+        public async Task<IActionResult> CreateVoli(Guid userGuid, Guid aktivnostGuid)
+        {
+            var exists = await _client.Cypher
+                .Match("(u:User)-[r:VOLI]->(a:Aktivnost)")
+                .Where((User u) => u.guid == userGuid)
+                .AndWhere((Aktivnost a) => a.guid == aktivnostGuid)
+                .Return(r => r.Count())
+                .ResultsAsync;
+
+            if (exists.Single() > 0)
+                return BadRequest("Veza VOLI već postoji.");
+
+            await _client.Cypher
+                .Match("(u:User)", "(a:Aktivnost)")
+                .Where((User u) => u.guid == userGuid)
+                .AndWhere((Aktivnost a) => a.guid == aktivnostGuid)
+                .Create("(u)-[:VOLI]->(a)")
+                .ExecuteWithoutResultsAsync();
+
+            return Ok("Veza VOLI kreirana.");
+        }
+
+
+
+
     }
 }
