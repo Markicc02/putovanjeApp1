@@ -17,9 +17,13 @@ namespace putovanjeApp1.Controllers
     public class UserController : ControllerBase
     {
         private readonly IGraphClient _client;
+<<<<<<< HEAD
+        private readonly UserService _userService;
+=======
 
         private readonly UserService _userService;
 
+>>>>>>> upstream/main
 
         public UserController(IGraphClient client, UserService userService)
         {
@@ -96,7 +100,10 @@ namespace putovanjeApp1.Controllers
             return Ok(users.ToList());
         }
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> upstream/main
         [HttpGet("public/{guid:guid}")]
         public async Task<IActionResult> GetById(Guid guid)
         {
@@ -110,6 +117,8 @@ namespace putovanjeApp1.Controllers
             return result != null ? Ok(result) : NotFound($"User sa ID {guid} nije pronađen.");
         }
 
+<<<<<<< HEAD
+=======
 
         
         [HttpPost]
@@ -149,6 +158,7 @@ namespace putovanjeApp1.Controllers
 
             return Ok("User uspešno obrisan.");
         }
+>>>>>>> upstream/main
 
 
         //// GET: api/user/{id}/recommendations/destinations
